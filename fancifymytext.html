@@ -1,17 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-		<title>Fancify Shamcify</title>
+    <head>
+        <title>Fancify Shamcify</title>
 
-		<!-- link to your script file here -->
-		
-	</head>
+        <!-- link to your script file here -->
+        <script src="fancifymytext.js"></script>
+    </head>
 
-	<body>
-		<h1>Fancify my Text</h1>
-		
+    <body>
+        <h1>Fancify my Text</h1>
+        <!-- Your UI controls go here -->
+        <!--  Had to look up what a fieldset https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fieldset-->
+        <fieldset class="fs1">
+            <!-- Originally, I used label, but I found out that a legend element serves
+            as a label for the entire fieldset element; less revelant for this
+            first one, but important for the second since it has to label the box,
+            not any one element: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/legend-->
+            <legend>Text</legend>
+            <textarea id="input" rows="4" columns="30"> </textarea>
+        </fieldset>
 
-		<!-- Your UI controls go here -->
-		
-	</body>
+        <fieldset class="fs2">
+            <legend>Fancify</legend>
+
+            <button type="button">Bigger!</button>
+
+            <!-- I didn't know this, but using radio groups give us mutual
+            exclusivity: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/radio -->
+            <input
+                type="radio"
+                id="FancyShmancy"
+                name="options"
+                value="FancyShmancy"
+            />
+            <input
+                type="radio"
+                id="BoringBetty"
+                name="options"
+                value="BoringBetty"
+            />
+        </fieldset>
+    </body>
 </html>

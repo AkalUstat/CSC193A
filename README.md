@@ -9,3 +9,6 @@
 - [HTML file](./encrypt-it.html)
 - [JS file](./encrypt-it.js)
 - [CSS](./style.css)
+
+# Assignment 8:
+- [Server](./a8/app.js)

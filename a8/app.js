@@ -3,12 +3,19 @@ const express = require("express");
 const app = express();
 
 // define endpoint for exercise 1 here
+// since r is a path parameter, it is a required value. It CANNOT be null
 app.get("/math/circle/:r", function (req, res) {
-  const radius = req.params.r;
-  const area = Math.PI * radius * radius;
-  const circumference = 2 * Math.PI * radius;
-  res.type("json");
-  res.json({ area: area, circumference: circumference });
+  // Convert to Number (ints, floats, etc)
+  const radius = Number(req.params.r);
+  // if the conversion failed, then we will see NaN
+  if (isNaN(radius)) {
+    res.status(400).send("Radius parameter MUST be a number.");
+  } else {
+    const area = Math.PI * radius * radius;
+    const circumference = 2 * Math.PI * radius;
+    res.type("json");
+    res.json({ area: area, circumference: circumference });
+  }
 });
 
 // define endpoint for exercise 2 here

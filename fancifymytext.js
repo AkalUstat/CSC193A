@@ -16,12 +16,12 @@ const radioHandler = () => {
   // after DOM loaded
   const shmancyRadio = document.getElementById("FancyShmancy");
   if (shmancyRadio.checked) {
-    alert("Fancy Shmancy alert");
+    // alert("Fancy Shmancy alert");
     inputElem.style.fontWeight = "bold";
     inputElem.style.color = "blue";
     inputElem.style.textDecoration = "underline";
   } else {
-    alert("Boring Betty alert");
+    // alert("Boring Betty alert");
     // undo all fancification
     inputElem.style.fontWeight = "normal";
     inputElem.style.color = "black";

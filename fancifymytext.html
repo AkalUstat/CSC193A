@@ -4,9 +4,10 @@
         <title>Fancify Shamcify</title>
 
         <!-- link to your script file here -->
-        <script src="fancifymytext.js"></script>
     </head>
 
+    <!-- Have to put it here; otherwise, the JS file will not have the loaded DOM values -->
+    <script src="fancifymytext.js"></script>
     <body>
         <h1>Fancify my Text</h1>
         <!-- Your UI controls go here -->
@@ -23,21 +24,28 @@
         <fieldset class="fs2">
             <legend>Fancify</legend>
 
-            <button type="button">Bigger!</button>
+            <button id="biggerbtn" onclick="biggerBtn()" type="button">
+                Bigger!
+            </button>
+            <button id="moobtn" onclick="mooBtn()" type="button">Moo</button>
 
             <!-- I didn't know this, but using radio groups give us mutual
             exclusivity: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/radio -->
+            <label for="FancyShmancy">FancyShmancy</label>
             <input
                 type="radio"
                 id="FancyShmancy"
                 name="options"
                 value="FancyShmancy"
+                onchange="radioHandler()"
             />
+            <label for="BoringBetty">BoringBetty</label>
             <input
                 type="radio"
                 id="BoringBetty"
                 name="options"
                 value="BoringBetty"
+                onchange="radioHandler()"
             />
         </fieldset>
     </body>

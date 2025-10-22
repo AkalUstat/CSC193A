@@ -36,7 +36,8 @@
 
   const handleEncrypt = () => {
     const input = document.querySelector("#input-text");
-    input.value = shiftCipher(input.value);
+    const output = document.querySelector("#result");
+    output.innerHTML = shiftCipher(input.value);
   };
 
   const handleReset = () => {
